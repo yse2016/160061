@@ -1,0 +1,4 @@
+aoki,e,52
+horie,g,55
+yamagu,k,43
+yosino,s,42
