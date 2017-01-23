@@ -10,16 +10,26 @@ public class Idean{
 
 class IdeanMan{
 	JFrame frame;
-	//JButton button;
-	//JPanel panel;
+	JButton btn1;
+	JButton btn2;
+	JPanel panel;
 	//JTextField textfield;
 	//JTextArea textarea;
 
 	public IdeanMan(){
 		frame = new JFrame("idean");
-		frame.setLocation(400 , 400);
-		frame.setSize(500 , 500);
+		frame.setLocation(600 , 100);
+		frame.setSize(300 , 300);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+		btn1 = new JButton("Click");
+		btn2 = new JButton("Drop");
+
+		panel = new JPanel();
+		frame.add(panel);
+		panel.add(btn1);
+		panel.add(btn2);
+		
 
 		frame.setVisible(true);
 	}
