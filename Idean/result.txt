@@ -24,11 +24,11 @@ class IdeanMan implements ActionListener{
 		frame.setSize(300 , 300);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-		btn1 = new JButton("選択");
+		btn1 = new JButton("選�?");
 		btn1.addActionListener(this);
 		btn1.setActionCommand("indean");
 
-		btn2 = new JButton("保存");
+		btn2 = new JButton("保�?");
 		btn2.addActionListener(this);
 		btn2.setActionCommand("idea");
 
@@ -55,7 +55,7 @@ class IdeanMan implements ActionListener{
 				File inFile = new File("Idean.java");
 				FileReader fr = new FileReader(inFile);
 				BufferedReader br = new BufferedReader(fr);
-                // 2. ファイルからデータを読み取って表示する
+                // 2. ファイルから�?ータを読み取って表示する
 				String line ;
 				while ((line=br.readLine()) != null) {
 					textarea.append(line);
@@ -89,3 +89,4 @@ class IdeanMan implements ActionListener{
 		}
 	}
 }
+
