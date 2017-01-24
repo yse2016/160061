@@ -8,13 +8,13 @@ public class Idean{
 	}
 }
 
-class IdeanMan{
+class IdeanMan implements ActionListener{
 	JFrame frame;
 	JButton btn1;
 	JButton btn2;
 	JPanel panel;
-	//JTextField textfield;
-	//JTextArea textarea;
+	JTextArea textarea;
+	
 
 	public IdeanMan(){
 		frame = new JFrame("idean");
@@ -22,15 +22,33 @@ class IdeanMan{
 		frame.setSize(300 , 300);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-		btn1 = new JButton("Click");
-		btn2 = new JButton("Drop");
+		btn1 = new JButton("選択");
+		btn1.addActionListener(this);
+		btn1.setActionCommand("indean");
+
+		btn2 = new JButton("保存");
+		btn2.addActionListener(this);
+		btn2.setActionCommand("idea");
+
+		textarea = new JTextArea(5 , 20);
 
 		panel = new JPanel();
 		frame.add(panel);
 		panel.add(btn1);
 		panel.add(btn2);
+		panel.add(textarea);
+
 		
 
+
+		
 		frame.setVisible(true);
+	}
+	public void actionPerformed(ActionEvent ae){
+		String cmd = ae.getActionCommand();
+
+		if(cmd.equals("indean")){
+		} else if(cmd.equals("idea")){
+		}
 	}
 }
