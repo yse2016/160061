@@ -60,9 +60,10 @@ class IdeanMan implements ActionListener{
 		frame.setVisible(true);
 		try {
                 // 1. ファイルを準備する
-				File inFile = new File("data.txt");
-				FileReader fr = new FileReader(inFile);
-				BufferedReader br = new BufferedReader(fr);
+				File inFile = new File("word.txt");
+				FileInputStream fis = new FileInputStream(inFile);
+				InputStreamReader isr = new InputStreamReader(fis, "UTF-8");
+				BufferedReader br = new BufferedReader(isr);
                 // 2. ファイルからデータを読み取って表示する
 				String line ;
 				while ((line=br.readLine()) != null) {
@@ -91,9 +92,9 @@ class IdeanMan implements ActionListener{
 
 			try {
                 // 1. ファイルを準備する
-                File f = new File("result.txt");
-                FileWriter fw = new FileWriter(f);
-                BufferedWriter bw = new BufferedWriter(fw);
+                FileOutputStream fo = new FileOutputStream("result.txt");
+                OutputStreamWriter ow = new OutputStreamWriter(fo, "UTF-8");
+                BufferedWriter bw = new BufferedWriter(ow);
                 PrintWriter pw = new PrintWriter(bw);
                 String  data = textarea.getText();
 
