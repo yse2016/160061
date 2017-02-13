@@ -1,0 +1,55 @@
+<!DOCTYPE html> 
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+<body>
+	<h1>押して離せ！！</h1>
+	<hr>
+
+	<canvas id="myCanvas" width="900" height="500"></canvas>
+
+	<script src="https://code.createjs.com/createjs-2015.11.26.min.js"></script>
+
+	<script>
+		//表示の際に起動する
+		window.addEventListener('load', init);
+		function init(){
+			// stageオブジェクトを作る
+			var stage = new createjs.Stage("myCanvas");
+			//shapeオブジェクトをつくる
+			var shape = new createjs.Shape();
+			var muki = 1;
+			var muki2 = 1;
+			shape.graphics.beginFill("#00ffcc");
+			shape.graphics.drawCircle(0, 0, 40, 40);
+			
+			
+
+			shape.addEventListener('click' , handleClick);
+
+
+			stage.addChild(shape);
+
+
+			createjs.Ticker.on('tick', function(){
+				shape.x += 40 * muki;
+				shape.y += 40 * muki2;
+
+				if( shape.x > 800 ) muki = -1;
+				if( shape.x < 0 ) muki = +1;
+				if( shape.y > 400 ) muki2 = -1;
+				if( shape.y < 0 ) muki2 = +1;
+				stage.update();
+			});
+			function handleClick(event){
+				alert("congratulations！！");
+			}
+
+		}
+
+
+	</script>
+</body>
+</html>
